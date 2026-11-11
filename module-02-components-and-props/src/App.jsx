@@ -6,11 +6,17 @@ import './App.css'
 import Navbar from './Navbar'
 import MainComponent from './MainComponent'
 
+let count = 0;
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  count++
+  // console.log("Hello App component")
+  console.log('count:', count)
 
   return (
     <>
+      <h1>count: {count}</h1>
       <Navbar />
       <MainComponent />
     </>
