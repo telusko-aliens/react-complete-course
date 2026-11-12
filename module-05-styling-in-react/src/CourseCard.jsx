@@ -1,13 +1,21 @@
+import { useState } from "react";
+
 function CourseCard() {
+    const [darkTheme, setDarkTheme] = useState(false);
+    function handleTheme() {
+        setDarkTheme(!darkTheme)
+        document.documentElement.classList.toggle('dark')
+    }
     return (
-        <div className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[320px] h-37.5 p-5 border-2 border-gray-200 rounded-[20px] mt-12.5 mx-auto">
-            <h2 className="text-yellow-500 sm:text-red-500 hidden sm:block">
+        <div className="rounded-xl border border-gray-200 bg-white p-6 text-gray-900 shadow-lg mt-12.5 mx-auto w-[50%] dark:bg-gray-500">
+            <button onClick={handleTheme}>{darkTheme ? 'Light theme' : 'Dark theme'}</button>
+            <h2 className="text-2xl font-bold">
                 React Complete Course
             </h2>
-            <p className="text-gray-400">
+            <p className="mt-2 text-gray-600 dark:text-gray-200">
                 Learn React from fundamentals to real-world application development.
             </p>
-            <button className="border border-gray-100 text-green-400 rounded-[20px] hover:bg-cyan-600 hover:text-black">
+            <button className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
                 Enroll Now
             </button>
         </div>
