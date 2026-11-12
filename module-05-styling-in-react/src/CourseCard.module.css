@@ -15,11 +15,11 @@
     color: gray;
 }
 
-.enroll-button {
+.button {
     border-radius: 20px;
 }
 
-.enroll-button:hover {
+.button:hover {
     background-color: aqua;
     color: black;
 }

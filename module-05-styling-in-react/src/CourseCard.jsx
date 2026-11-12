@@ -1,6 +1,5 @@
-import "./CourseCard.css";
+import styles from "./CourseCard.module.css";
 function CourseCard() {
-    const isAvailable = true;
     const cardStyle = {
         width: 320,
         height: 100,
@@ -15,9 +14,7 @@ function CourseCard() {
             <p className="course-description">
                 Learn React from fundamentals to real-world application development.
             </p>
-            <button style={{ backgroundColor: isAvailable ? "green" : "red" }}>
-                {isAvailable ? "Enroll Now" : "Sold out"}
-            </button>
+            <button className={styles.button}>Enroll Now</button>
         </div>
     );
 }
