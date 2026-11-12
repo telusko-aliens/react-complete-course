@@ -1,10 +1,15 @@
 import "./App.css";
-import CourseDashboard from "./CourseDashboard";
+import CourseCard from "./CourseCard";
+import { courses } from "./courses";
 
 function App() {
   return (
     <>
-      <CourseDashboard isLoading={false} isError="" isAvailable={true} isEnrolled={true} isCompleted={true} />
+      {
+        courses.map((course) => (
+          <CourseCard title={course.title} price={course.price} instructor={course.instructor} key={course.id} />
+        ))
+      }
     </>
   );
 }
