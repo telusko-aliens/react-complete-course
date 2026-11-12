@@ -1,9 +1,7 @@
-p -> padding
-m -> margin
-
-t -> top
-b -> bottom
-l -> left
-r -> right
-x -> horizontal
-y -> vertical
+| Prefix | Starts at |
+| ------ | --------: |
+| `sm:`  |     640px |
+| `md:`  |     768px |
+| `lg:`  |    1024px |
+| `xl:`  |    1280px |
+| `2xl:` |    1536px |

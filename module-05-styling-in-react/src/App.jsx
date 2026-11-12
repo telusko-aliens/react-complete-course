@@ -4,7 +4,13 @@ import CourseCard from "./CourseCard";
 function App() {
   return (
     <>
-      <CourseCard />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+      </div>
     </>
   );
 }
