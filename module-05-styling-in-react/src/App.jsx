@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <CourseCard />
-      <button className="button">Hello world</button>
     </>
   );
 }

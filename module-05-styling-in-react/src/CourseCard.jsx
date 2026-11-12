@@ -1,20 +1,12 @@
-import styles from "./CourseCard.module.css";
 function CourseCard() {
-    const cardStyle = {
-        width: 320,
-        height: 100,
-        padding: 20,
-        border: "1px solid gray",
-        borderRadius: 20,
-        margin: "50px auto 0",
-    };
+
     return (
-        <div style={cardStyle}>
-            <h2 className="course-title"> React Complete Course</h2>
-            <p className="course-description">
+        <div className="w-[320px] h-37.5 p-5 border-2 border-gray-200 rounded-[20px] mt-12.5 mx-auto">
+            <h2 className="text-cyan-400"> React Complete Course</h2>
+            <p className="text-gray-400">
                 Learn React from fundamentals to real-world application development.
             </p>
-            <button className={styles.button}>Enroll Now</button>
+            <button className="border border-gray-100 text-white rounded-[20px] hover:bg-cyan-600 hover:text-black">Enroll Now</button>
         </div>
     );
 }
