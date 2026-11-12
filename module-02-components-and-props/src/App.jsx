@@ -1,22 +1,23 @@
-import './App.css'
-import UserProfile from './UserProfile'
-
+import "./App.css";
+import Modal from "./Modal";
 
 function App() {
-
-  function handleClick() {
-    console.log("I was clicked from child component")
-  }
-
-  function onMessage(message) {
-    console.log(message)
-  }
-
   return (
     <>
-      <UserProfile name="Naman" role="Frontend Developer" age={23} skills={['HTML', 'CSS', 'JS', 'React']} address={{ country: 'India', city: 'Mumbai' }} experience='5yrs' click={handleClick} onMessage={onMessage} />
+      <Modal>
+        <h2>Delete Account</h2>
+        <p>Are you sure you want to delete the account?</p>
+        <button>Delete Account</button>
+      </Modal>
+
+      <Modal>
+        <h2>Logout Account</h2>
+        <p>Are you sure you want to logout the account?</p>
+        <button>cancel</button>
+        <button>ok</button>
+      </Modal>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
