@@ -1,0 +1,25 @@
+.course-card {
+    width: 320px;
+    height: 100px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 50px auto 0;
+}
+
+.course-title {
+    color: aquamarine;
+}
+
+.course-description {
+    color: gray;
+}
+
+.enroll-button {
+    border-radius: 20px;
+}
+
+.enroll-button:hover {
+    background-color: aqua;
+    color: black;
+}
