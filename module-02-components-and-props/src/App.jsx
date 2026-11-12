@@ -7,8 +7,7 @@ function App() {
 
   return (
     <>
-      <UserProfile name="Naman" role="Frontend Developer" />
-      <UserProfile name="Gaurav" role="Software Developer" />
+      <UserProfile name="Naman" role="Frontend Developer" age={23} skills={['HTML', 'CSS', 'JS', 'React']} address={{ country: 'India', city: 'Mumbai' }} experience='5yrs' />
     </>
   )
 }
