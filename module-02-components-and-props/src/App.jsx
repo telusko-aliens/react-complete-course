@@ -1,21 +1,14 @@
 import "./App.css";
-import Modal from "./Modal";
+import Dashboard from "./Dashboard";
 
 function App() {
+  const user = {
+    name: "naman",
+    role: "Frontend Developer"
+  }
   return (
     <>
-      <Modal>
-        <h2>Delete Account</h2>
-        <p>Are you sure you want to delete the account?</p>
-        <button>Delete Account</button>
-      </Modal>
-
-      <Modal>
-        <h2>Logout Account</h2>
-        <p>Are you sure you want to logout the account?</p>
-        <button>cancel</button>
-        <button>ok</button>
-      </Modal>
+      <Dashboard user={user} />
     </>
   );
 }
