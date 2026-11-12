@@ -1,10 +1,10 @@
 import "./App.css";
-import ProductCardInfo from "./ProductCardInfo";
+import CourseDashboard from "./CourseDashboard";
 
 function App() {
   return (
     <>
-      <ProductCardInfo name="Keyboard" price={499} inStock={true} />
+      <CourseDashboard isLoading={false} isError="" isAvailable={true} isEnrolled={true} isCompleted={true} />
     </>
   );
 }
