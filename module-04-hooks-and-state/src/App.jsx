@@ -1,16 +1,10 @@
 import "./App.css";
+import ProductCardInfo from "./ProductCardInfo";
 
 function App() {
-  let counter = 0;
-  function handleValue() {
-    counter = counter + 1;
-    console.log(counter);
-  }
-
   return (
     <>
-      <h1>{counter}</h1>
-      <button onClick={handleValue}>Increase</button>
+      <ProductCardInfo name="Keyboard" price={1999} />
     </>
   );
 }
