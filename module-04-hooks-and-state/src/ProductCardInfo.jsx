@@ -9,6 +9,8 @@ function ProductCardInfo({ name, price }) {
     function handleAddToCart() {
         console.log("before: ", quantity);
         setQuantity(quantity + 1);
+        setQuantity(prevQuantity => prevQuantity + 1);
+        setQuantity(prevQuantity => prevQuantity + 1);
         console.log("after: ", quantity);
     }
 
