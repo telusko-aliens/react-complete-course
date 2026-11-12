@@ -1,10 +1,30 @@
+import { useState } from "react";
 import "./App.css";
-import ProductCardInfo from "./ProductCardInfo";
 
 function App() {
+  const [user, setUser] = useState({
+    name: "Naman",
+    role: "Developer",
+    Address: {
+      city: "Mumbai",
+      country: "India",
+    },
+  });
+
+  function handleValue() {
+    setUser({
+      ...user,
+      Address: {
+        ...user.Address,
+        city: "Indore",
+      },
+      name: "Gaurav",
+    });
+  }
   return (
     <>
-      <ProductCardInfo name="Wireless Headphones" price={2999} />
+      <p>{user.name}</p>
+      <button onClick={handleValue}>update the value</button>
     </>
   );
 }
