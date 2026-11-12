@@ -1,26 +1,25 @@
 import { useState } from "react";
 
 function ProductCardInfo({ name, price }) {
-    const [cartItem, setCartItem] = useState(0);
-    const [favorite, setFavorite] = useState(false);
+    const [quantity, setQuantity] = useState(0);
+    const totalPrice = quantity * price;
 
-    function handleCart() {
-        setCartItem(cartItem + 1);
+    console.log("ProductCard rendered: ", quantity);
+
+    function handleAddToCart() {
+        console.log("before: ", quantity);
+        setQuantity(quantity + 1);
+        console.log("after: ", quantity);
     }
-    function handleFavorite() {
-        setFavorite(!favorite);
-    }
+
     return (
         <>
             <h1>{name}</h1>
 
-            <h2>{price}</h2>
-            <h1>Cart items {cartItem}</h1>
-            <button onClick={handleCart}>Add to cart</button>
-            <h1>{favorite ? "Added" : "Not added"}</h1>
-            <button onClick={handleFavorite}>
-                {favorite ? "Remove" : "Add to favorite"}
-            </button>
+            <p>Price: ₹{price}</p>
+            <p>Quantity: {quantity}</p>
+            <p>Total: ₹{totalPrice}</p>
+            <button onClick={handleAddToCart}>Add to cart</button>
         </>
     );
 }

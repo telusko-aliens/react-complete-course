@@ -4,7 +4,7 @@ import ProductCardInfo from "./ProductCardInfo";
 function App() {
   return (
     <>
-      <ProductCardInfo name="Keyboard" price={1999} />
+      <ProductCardInfo name="Wireless Headphones" price={2999} />
     </>
   );
 }
