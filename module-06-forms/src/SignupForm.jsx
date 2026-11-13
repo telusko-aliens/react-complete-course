@@ -1,4 +1,5 @@
 import { useActionState } from "react";
+import SubmitButton from "./SubmitButton";
 
 const initialState = {
     message: "",
@@ -54,9 +55,7 @@ function SignupForm() {
                 className="border border-white text-white p-1"
             />
 
-            <button className="text-white border border-white bg-blue-600 p-1 rounded-xl mt-2">
-                {isPending ? "Signing up..." : "Sign Up"}
-            </button>
+            <SubmitButton />
         </form>
     );
 }
