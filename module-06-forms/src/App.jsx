@@ -1,9 +1,9 @@
-import CourseCard from "./CourseCard";
+import LoginForm from "./LoginForm";
 
 function App() {
   return (
     <>
-      <CourseCard />
+      <LoginForm />
     </>
   );
 }
