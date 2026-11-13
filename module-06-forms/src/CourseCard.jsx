@@ -1,46 +1,63 @@
 import { useState } from "react";
 
 function CourseCard() {
-    const [password, setPassword] = useState("");
-    function handleSubmit(event) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        console.log(formData.get("username"));
-        console.log(formData.get("email"));
-    }
+    const [name, setName] = useState("");
+    const [course, setCourse] = useState("");
+    const [agreed, setAgreed] = useState(false);
+    const [level, setLevel] = useState("");
 
-    function handlePassword(event) {
-        setPassword(event.target.value);
-    }
     return (
-        <form
-            className="flex flex-col justify-center items-center mt-1 gap-3 min-h-screen"
-            onSubmit={handleSubmit}
-        >
-            <input
-                type="text"
-                className="border border-white p-2"
-                placeholder="username"
-                name="username"
+        <form>
+            <p>{name}</p>
+            <textarea
+                value={name}
+                onChange={() => setName(event.target.value)}
+                className="border border-white mt-3 mb-5"
             />
-            <input
-                type="email"
-                className="border border-white p-2"
-                placeholder="email"
-                name="email"
-            />
-            <input
-                type="password"
-                className="border border-white p-2"
-                placeholder="password"
-                onChange={handlePassword}
-            />
-            {password.length > 0 && password.length < 8
-                ? "Password must be atleast 8 characters"
-                : ""}
-            <button className="border border-white text-black rounded-xl p-1 bg-amber-500 cursor-pointer">
-                Enroll
-            </button>
+            <br />
+            <select
+                value={course}
+                onChange={(event) => setCourse(event.target.value)}
+                className="mb-5"
+            >
+                <option value="">Select course</option>
+                <option value="react">React</option>
+                <option value="javascript">JavaScript</option>
+                <option value="node">Node.js</option>
+                <option value="css">CSS</option>
+            </select>
+            <br />
+            <label>
+                <input
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={(event) => setAgreed(event.target.checked)}
+                />
+                React
+            </label>
+            <br /> <br />
+            <label className="mr-5">
+                <input
+                    type="radio"
+                    name="level"
+                    value="beginner"
+                    checked={level === "beginner"}
+                    onChange={(event) => setLevel(event.target.value)}
+                    className="mr-2"
+                />
+                Beginner
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    name="level"
+                    value="advanced"
+                    checked={level === "advanced"}
+                    onChange={(event) => setLevel(event.target.value)}
+                    className="mr-2"
+                />
+                Advanced
+            </label>
         </form>
     );
 }
