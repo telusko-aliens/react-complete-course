@@ -1,9 +1,15 @@
-import { useWindowSize } from "./useWindowSize";
+import { useCounter } from "./useCounter";
 
 function Dashboard() {
-    const width = useWindowSize();
+    const { count, increase, decrease } = useCounter(10);
 
-    return <h1>Dashboard Width: {width}px</h1>;
+    return (
+        <>
+            <h1>Dashboard count: {count}px</h1>
+            <button onClick={increase}>Increase count</button><br />
+            <button countbutton onClick={decrease}>Decrease count</button>
+        </>
+    )
 }
 
 export default Dashboard;
