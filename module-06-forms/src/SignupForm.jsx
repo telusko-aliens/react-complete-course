@@ -1,16 +1,42 @@
-function SignupForm() {
-    function handleSubmit(formData) {
-        const name = formData.get("name");
-        const email = formData.get("email");
-        console.log({
-            name,
-            email,
-        });
+import { useActionState } from "react";
+
+const initialState = {
+    message: "",
+};
+
+async function signUpAction(previousState, formData) {
+    const name = formData.get("name");
+    const email = formData.get("email");
+
+    if (name === "") {
+        return {
+            message: "Name is required",
+        };
     }
+
+    await new Promise((resolve) => {
+        setTimeout(resolve, 2000);
+    });
+
+    console.log({
+        name,
+        email,
+    });
+
+    return {
+        message: "",
+    };
+}
+
+function SignupForm() {
+    const [state, formAction, isPending] = useActionState(
+        signUpAction,
+        initialState,
+    );
 
     return (
         <form
-            action={handleSubmit}
+            action={formAction}
             className="flex flex-col justify-center items-center mt-1 gap-3 min-h-screen"
         >
             <input
@@ -19,6 +45,7 @@ function SignupForm() {
                 placeholder="Name"
                 className="border border-white text-white p-1"
             />
+            {state.message && <p>{state.message}</p>}
 
             <input
                 type="email"
@@ -28,7 +55,7 @@ function SignupForm() {
             />
 
             <button className="text-white border border-white bg-blue-600 p-1 rounded-xl mt-2">
-                Sign Up
+                {isPending ? "Signing up..." : "Sign Up"}
             </button>
         </form>
     );
