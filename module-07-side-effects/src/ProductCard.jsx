@@ -1,19 +1,38 @@
+import { useEffect, useState } from "react";
+
 function ProductCard() {
-    const price = 1000;
-    const discount = 20;
+    const [count, setCount] = useState(0);
+    const [price, setPrice] = useState(0);
 
-    const finalPrice = price - (price * discount) / 100;
+    // empty dependency array
+    useEffect(() => {
+        console.log("Printing on console only once when component mount");
+        document.title = `count: ${count}`;
+    }, []);
 
-    function handleValue() {
-        console.log("Printing in console");
-    }
+    // dependency array with count variable
+    useEffect(() => {
+        console.log(
+            "Printing on console when component mount or my count value gets changed.",
+        );
+        document.title = `count: ${count}`;
+    }, [count]);
 
-    document.title = `Price: ₹${finalPrice}`;
+    // dependency array with count & price variable
+    useEffect(() => {
+        console.log(
+            "Printing on console when component mount or my count/price value gets changed.",
+        );
+        document.title = `count: ${count}`;
+    }, [count, price]);
 
     return (
         <>
-            <h2>Final Price: ₹{finalPrice}</h2>
-            <button onClick={handleValue}>Click me</button>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increase</button>
+            <br />
+            <h2>Price: {price}</h2>
+            <button onClick={() => setPrice(price + 1)}>Increase price</button>
         </>
     );
 }
