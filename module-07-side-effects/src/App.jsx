@@ -1,10 +1,15 @@
-import ProductCard from "./ProductCard";
+import { useState } from "react";
+import Timer from "./Timer";
 
 function App() {
+  const [showTimer, setShowTimer] = useState(false);
   return (
-    <>
-      <ProductCard />
-    </>
+    <div>
+      {showTimer && <Timer />}
+      <button onClick={() => setShowTimer(!showTimer)}>
+        {showTimer ? "Hide timer" : "Show timer"}
+      </button>
+    </div>
   );
 }
 
