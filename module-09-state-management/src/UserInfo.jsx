@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
 
 function UserInfo() {
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
     return (
         <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
             <h2 className="mb-4 text-base font-semibold text-emerald-700">
