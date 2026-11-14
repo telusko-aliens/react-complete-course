@@ -1,32 +1,24 @@
-import { useState } from "react";
-import { UserContext } from "./context/UserContext";
-import Dashboard from "./Dashboard";
-import WelcomeSection from "./WelcomeSection";
+import { useReducer } from "react";
+import { CartContext } from "./context/CartContext";
+import { intialState, ShoppingReducer } from "./reducers/ShoppingReducer";
+import ShoppingCart from "./ShoppingCart";
+import Navbar from "./Navbar";
+import ProductList from "./ProductList";
 
 const App = () => {
-  const [user, setUser] = useState({
-    userName: "Naman",
-    role: "Developer",
-  });
-
-  function updateUser(name) {
-    setUser((prev) => ({
-      ...prev,
-      userName: name,
-    }));
-  }
+  const [cart, dispatch] = useReducer(ShoppingReducer, intialState);
 
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-1 text-lg font-semibold text-blue-700">App</h2>
+    <CartContext value={{ cart, dispatch }}>
+      <div className="min-h-screen bg-slate-50 text-slate-900">
+        <Navbar />
 
-        <UserContext value={{ user, updateUser }}>
-          <Dashboard />
-        </UserContext>
-        <WelcomeSection />
+        <main className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:px-6">
+          <ProductList />
+          <ShoppingCart />
+        </main>
       </div>
-    </div>
+    </CartContext>
   );
 };
 
