@@ -1,5 +1,6 @@
 export const ProductLoader = async () => {
   const response = await fetch("https://dummyjson.com/products?limit=5");
+  if (!response.ok) throw new Error("something went wrong");
 
   const data = await response.json();
   return data.products;

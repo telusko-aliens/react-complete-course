@@ -3,6 +3,10 @@ import { useLoaderData, Link } from "react-router";
 function Products() {
     const products = useLoaderData();
 
+    if (products.message) {
+        return <p>{products.message}</p>
+    }
+
     return (
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
             {products.map((product) => (

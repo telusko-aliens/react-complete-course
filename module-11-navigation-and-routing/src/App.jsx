@@ -5,12 +5,14 @@ import Products from "./Products";
 import ProductDetails from "./ProductDetails";
 import MainLayout from "./MainLayout";
 import { ProductDetailsLoader, ProductLoader } from "./loaders/ProductsLoader";
+import Error from "./Error";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout />,
+      errorElement: <Error />,
       children: [
         {
           index: true,
