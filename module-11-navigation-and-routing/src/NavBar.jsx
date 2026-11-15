@@ -7,7 +7,6 @@ function NavBar() {
             {/* <Link to="/">Home</Link> | {" "}
             <Link to="/about">About</Link> | {" "}
             <Link to="/products">Products</Link> */}
-
             {/* Using NavLink tag */}
             <NavLink
                 style={({ isActive }) => ({ color: isActive ? "yellow" : "" })}
@@ -29,6 +28,7 @@ function NavBar() {
             >
                 Products
             </NavLink>
+            <hr />
         </>
     );
 }

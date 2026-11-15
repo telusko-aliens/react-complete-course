@@ -1,10 +1,8 @@
 import { Link } from "react-router";
 import { products } from "./products_data";
-import NavBar from "./NavBar";
 function Products() {
     return (
         <div>
-            <NavBar />
             <h1>Our Products</h1>
             <p>Explore our latest products.</p> <br />
             {products.map((product) => (
