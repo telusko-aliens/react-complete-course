@@ -1,17 +1,24 @@
-import { useParams } from "react-router";
-import { products } from "./products_data";
+import { useLoaderData } from "react-router";
 
 function ProductDetails() {
-    const { productId } = useParams();
-    const product = products.find((item) => item.id === Number(productId));
+    const product = useLoaderData();
+
     return (
-        <>
-            <h1>Product Details page</h1>
-            <br />
-            <br />
-            <h2>{product.id}</h2>
-            <h2>{product.name}</h2>
-        </>
+        <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+            <div className="space-y-4">
+                <div className="rounded-lg bg-gray-50 p-4">
+                    <p className="mb-1 text-sm font-medium text-gray-500">Product ID</p>
+                    <h2 className="text-lg font-semibold text-gray-800">{product.id}</h2>
+                </div>
+
+                <div className="rounded-lg bg-gray-50 p-4">
+                    <p className="mb-1 text-sm font-medium text-gray-500">Product Name</p>
+                    <h2 className="text-lg font-semibold text-gray-800">
+                        {product.title}
+                    </h2>
+                </div>
+            </div>
+        </div>
     );
 }
 
