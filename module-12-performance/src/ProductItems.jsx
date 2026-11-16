@@ -1,10 +1,13 @@
 import { memo } from "react";
 import { Link } from "react-router";
 
-const ProductItems = memo(function ProductList({ products }) {
+const ProductItems = memo(function ProductList({ products, user }) {
     console.log("productList Component rendered");
     return (
         <div className="w-full max-w-3xl">
+            <h3 className="mb-6 text-center text-xl font-bold text-gray-200">
+                {user.name}
+            </h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {products.map((product) => (
                     <div

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLoaderData } from "react-router";
 import ProductItems from "./ProductItems";
 
@@ -6,9 +6,11 @@ function Products() {
     const [count, setCount] = useState(0);
     const products = useLoaderData();
 
-    /* const user = {
-          name: "Naman",
-      }; */
+    const user = useMemo(() => {
+        return {
+            name: "Naman",
+        };
+    }, []);
 
     return (
         <div className="w-full max-w-3xl py-8">
@@ -25,7 +27,7 @@ function Products() {
                 </div>
             </div>
 
-            <ProductItems products={products} />
+            <ProductItems products={products} user={user} />
         </div>
     );
 }
