@@ -1,0 +1,16 @@
+function NavBar() {
+    return (
+        <>
+            <nav className="flex items-center gap-2 rounded-xl bg-gray-100 p-2 shadow-sm w-fit">
+                <p
+                    className=" rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 
+                            bg-blue-600 text-white shadow-sm"
+                >
+                    Products
+                </p>
+            </nav>
+        </>
+    );
+}
+
+export default NavBar;
