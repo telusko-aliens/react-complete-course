@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useLoaderData } from "react-router";
 import ProductItems from "./ProductItems";
 
@@ -10,6 +10,10 @@ function Products() {
         return {
             name: "Naman",
         };
+    }, []);
+
+    const handleClick = useCallback(() => {
+        console.log("Clicked");
     }, []);
 
     return (
@@ -27,7 +31,7 @@ function Products() {
                 </div>
             </div>
 
-            <ProductItems products={products} user={user} />
+            <ProductItems products={products} user={user} click={handleClick} />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Link } from "react-router";
 
-const ProductItems = memo(function ProductList({ products, user }) {
+const ProductItems = memo(function ProductList({ products, user, click }) {
     console.log("productList Component rendered");
     return (
         <div className="w-full max-w-3xl">
@@ -26,6 +26,12 @@ const ProductItems = memo(function ProductList({ products, user }) {
                         >
                             View Details
                         </Link>
+                        <button
+                            onClick={click}
+                            className="mt-4 ml-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700"
+                        >
+                            Click me
+                        </button>
                     </div>
                 ))}
             </div>
